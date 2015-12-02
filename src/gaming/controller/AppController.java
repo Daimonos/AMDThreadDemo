@@ -26,7 +26,7 @@ public class AppController implements ActionListener{
 		switch(e.getActionCommand()) {
 			
 		case "quit":
-			
+			vc.getMainFrame().dispose();
 			break;
 		case "home":
 			mu.setMusic("imperial_march.wav");
