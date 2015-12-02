@@ -1,6 +1,7 @@
 package gaming.utils;
 
 import java.io.File;
+import java.io.IOException;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -38,5 +39,12 @@ public class MusicThread extends Thread {
 	public void stopMusic() {
 		System.out.println("Stopping Thread");
 		audioClip.stop();
+		audioClip.close();
+		try {
+			audioStream.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
