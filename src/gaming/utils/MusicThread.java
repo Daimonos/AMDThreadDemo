@@ -10,11 +10,10 @@ import javax.sound.sampled.DataLine;
 public class MusicThread extends Thread {
 
 	private String path;
-	File audioFile;
-	AudioInputStream audioStream;
-	DataLine.Info info;
-	Boolean playing;
-	Clip audioClip;
+	private File audioFile;
+	private AudioInputStream audioStream;
+	private DataLine.Info info;
+	private Clip audioClip;
 
 	public MusicThread(String path) {
 		this.path = path;
@@ -30,7 +29,6 @@ public class MusicThread extends Thread {
 			audioClip.open(audioStream);
 			audioClip.loop(Clip.LOOP_CONTINUOUSLY);
 			audioClip.start();
-			playing = true;
 		} catch (Exception e) {
 			System.out.println("Error trying to play track");
 			e.printStackTrace();
