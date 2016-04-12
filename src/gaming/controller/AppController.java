@@ -37,6 +37,9 @@ public class AppController implements ActionListener{
 			mu.setMusic("starwars.wav");
 			vc.setMainPanel(new CharacterPanel());
 			break;
+		case "blaster_fire":
+			mu.playSoundEffect("blaster_fire.wav");
+			break;
 		default:
 			break;
 		}

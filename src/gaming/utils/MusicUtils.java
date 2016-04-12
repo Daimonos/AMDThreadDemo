@@ -28,6 +28,11 @@ public class MusicUtils {
 		initializeThread();
 	}
 	
+	public void playSoundEffect(String path) {
+		SoundEffect s = new SoundEffect(RESOURCE_PATH+"/"+path);
+		s.run();
+	}
+	
 	private void initializeThread() {
 		musicThread = new MusicThread(fullPath);
 		System.out.println("Starting Thread");
